@@ -46,7 +46,6 @@ class BooksApp extends React.Component {
         <Route exact path="/search" render={() =>
           <SearchBooks
             results={searchResults}
-            storedBooks={storedBooks}
             utils={this.utils}
           />
         }/>

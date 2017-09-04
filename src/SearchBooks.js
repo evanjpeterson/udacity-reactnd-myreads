@@ -14,7 +14,7 @@ class SearchBooks extends React.Component {
 
   render() {
     const { query } = this.state
-    const { results, storedBooks, utils } = this.props
+    const { results, utils } = this.props
 
     return (
       <div className="search-books">
@@ -32,7 +32,6 @@ class SearchBooks extends React.Component {
         <div className="search-books-results">
           <BooksGrid
             books={results}
-            storedBooks={storedBooks}
             utils={utils}
           />
         </div>
