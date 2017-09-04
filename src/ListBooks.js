@@ -5,7 +5,7 @@ import Bookshelf from './Bookshelf'
 class ListBooks extends React.Component {
 
     render() {
-      const { bookshelves, books } = this.props
+      const { bookshelves, books, utils } = this.props
 
       return (
         <div className="list-books">
