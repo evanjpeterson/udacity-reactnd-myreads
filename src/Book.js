@@ -3,7 +3,7 @@ import React from 'react'
 class Book extends React.Component {
 
   render() {
-    const { book } = this.props
+    const { book, storedBooks, utils } = this.props
 
     return (
       <div className="book">

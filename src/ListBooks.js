@@ -17,6 +17,7 @@ class ListBooks extends React.Component {
               <Bookshelf
                 title={title}
                 books={books.filter(book => book.shelf === shelf)}
+                utils={utils}
                 key={index}
               />
             )}
