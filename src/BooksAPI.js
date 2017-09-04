@@ -41,4 +41,7 @@ export const search = (query, maxResults) =>
     },
     body: JSON.stringify({ query, maxResults })
   }).then(res => res.json())
-    .then(data => data.books)
+    .then(data => {
+      const badResponse = data.books == null || data.books.error != null
+      return badResponse ? [] : data.books
+    })

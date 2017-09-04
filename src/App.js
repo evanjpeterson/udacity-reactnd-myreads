@@ -13,14 +13,29 @@ class BooksApp extends React.Component {
       ["currentlyReading", "Currently Reading"],
       ["wantToRead", "Want to Read"],
       ["read", "Read"]
-    ]
+    ],
+  }
+
+  utils = {
+    getAllBooks: () => {
+      BooksAPI.getAll()
+        .then(storedBooks => {
+          this.setState({ storedBooks })
+        })
+    },
+    searchBooks: (query) => {
+      const maxResults = 20;
+      return query
+        ? BooksAPI.search(query, maxResults)
+            .then(searchResults => {
+              this.setState({ searchResults })
+            })
+        : this.setState( { searchResults: [] })
+    }
   }
 
   componentDidMount() {
-    BooksAPI.getAll()
-      .then(storedBooks => {
-        this.setState({ storedBooks: storedBooks })
-      })
+    this.utils.getAllBooks()
   }
 
   render() {
@@ -31,12 +46,14 @@ class BooksApp extends React.Component {
         <Route exact path="/search" render={() =>
           <SearchBooks
             results={searchResults}
+            utils={this.utils}
           />
         }/>
         <Route exact path="/" render={() =>
           <ListBooks
             bookshelves={bookshelves}
             books={storedBooks}
+            utils={this.utils}
           />
         }/>
       </div>
