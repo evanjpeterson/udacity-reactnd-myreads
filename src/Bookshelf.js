@@ -11,14 +11,11 @@ class Bookshelf extends React.Component {
         <h2 className="bookshelf-title">{title}</h2>
         <div className="bookshelf-books">
           <ol className="books-grid">
-            <li>
               {books.map((book, index) =>
-                <Book
-                  book={book}
-                  key={index}
-                />
+                <li key={index}>
+                  <Book book={book}/>
+                </li>
               )}
-            </li>
           </ol>
         </div>
       </div>
