@@ -8,6 +8,7 @@ import './App.css'
 class BooksApp extends React.Component {
   state = {
     storedBooks: [],
+    searchResults: [],
     bookshelves: [
       ["currentlyReading", "Currently Reading"],
       ["wantToRead", "Want to Read"],
@@ -23,12 +24,14 @@ class BooksApp extends React.Component {
   }
 
   render() {
-    const { storedBooks, bookshelves } = this.state
+    const { storedBooks, searchResults, bookshelves } = this.state
 
     return (
       <div className="app">
         <Route exact path="/search" render={() =>
-          <SearchBooks />
+          <SearchBooks
+            results={searchResults}
+          />
         }/>
         <Route exact path="/" render={() =>
           <ListBooks

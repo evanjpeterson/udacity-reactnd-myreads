@@ -1,9 +1,12 @@
 import React from 'react'
 import { Link } from 'react-router-dom'
+import BooksGrid from './BooksGrid'
 
 class SearchBooks extends React.Component {
 
   render() {
+    const { results } = this.props
+
     return (
       <div className="search-books">
         <div className="search-books-bar">
@@ -22,7 +25,7 @@ class SearchBooks extends React.Component {
           </div>
         </div>
         <div className="search-books-results">
-          <ol className="books-grid"></ol>
+          <BooksGrid books={results}/>
         </div>
       </div>
     )
