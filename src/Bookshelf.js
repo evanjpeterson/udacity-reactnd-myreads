@@ -12,6 +12,7 @@ class Bookshelf extends React.Component {
         <div className="bookshelf-books">
           <BooksGrid
             books={books}
+            storedBooks={books}
             utils={utils}
           />
         </div>

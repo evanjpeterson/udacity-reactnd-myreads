@@ -4,7 +4,7 @@ import Book from './Book'
 class BooksGrid extends React.Component {
 
   render() {
-    const { books, utils } = this.props
+    const { books, storedBooks, utils } = this.props
 
     return (
       <ol className="books-grid">
@@ -12,6 +12,7 @@ class BooksGrid extends React.Component {
             <li key={index}>
               <Book
                 book={book}
+                storedBooks={storedBooks}
                 utils={utils}
               />
             </li>

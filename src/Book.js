@@ -4,7 +4,7 @@ import BookshelfChanger from './BookshelfChanger'
 class Book extends React.Component {
 
   render() {
-    const { book, utils } = this.props
+    const { book, storedBooks, utils } = this.props
 
     return (
       <div className="book">
@@ -14,6 +14,7 @@ class Book extends React.Component {
           </div>
           <BookshelfChanger
             book={book}
+            storedBooks={storedBooks}
             utils={utils}
           />
         </div>
